@@ -1,6 +1,19 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Slider>
-@using ContentModels = Umbraco.Web.PublishedContentModels;
-@{
-	Layout = null;
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{      
+    if (CurrentPage.HasValue("slideImages")){                                         
+        var dynamicMediaFolder = Umbraco.Media(CurrentPage.slideImages);
+		<div class="slider">
+         <ul>
+            @foreach (var picture in dynamicMediaFolder.Children)
+            {
+                <li>
+                    <div class="slides">
+                        <img src="@picture.umbracoFile" alt="@picture.Name" />
+                    </div>
+                </li>
+            }
+         </ul>
+		</div>
+    }
 }
-@Umbraco.RenderMacro("DSSlider", new {sliderID="1096"})

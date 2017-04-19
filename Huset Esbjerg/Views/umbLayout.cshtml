@@ -14,14 +14,29 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <script src="/js/jquery.min.js"></script>
     <script src="/js/config.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="/js/slick.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		  $('.slider').slick({
+				dots: true,
+				infinite: true,
+				speed: 300,
+				slidesToShow: 1,
+				adaptiveHeight: true
+				});
+			});
+  	</script>
     <script src="/js/skel.min.js"></script>
     <script src="/js/skel-panels.min.js"></script>
     <noscript>
         <link rel="stylesheet" href="/css/skel-noscript.css" />
         <link rel="stylesheet" href="/css/style.css" />
         <link rel="stylesheet" href="/css/style-desktop.css" />
+		<link rel="stylesheet" type="text/css" href="css/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
     </noscript>
     <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><script src="/js/html5shiv.js"></script><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
